@@ -1,20 +1,45 @@
 {
-  "name": "ai-powered-interview-assistant",
+  "name": "interview-assistant-backend",
   "version": "1.0.0",
-  "description": "An AI-powered interview assistant with real-time transcription, question generation, and candidate evaluation",
-  "main": "index.js",
+  "description": "Backend API for AI-Powered Interview Assistant",
+  "main": "server.js",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd backend && npm run dev",
-    "client": "cd frontend && npm start",
-    "install-deps": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "build": "cd frontend && npm run build",
-    "start": "cd backend && npm start"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "resume-server": "node resume-server.js",
+    "resume-dev": "nodemon resume-server.js",
+    "test": "jest"
   },
-  "keywords": ["ai", "interview", "assistant", "transcription", "react", "nodejs"],
+  "keywords": [
+    "ai",
+    "interview",
+    "api",
+    "nodejs",
+    "express"
+  ],
   "author": "AI-Powered Interview Team",
   "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^6.0.1",
+    "joi": "^17.7.1",
+    "jsonwebtoken": "^9.0.0",
+    "mammoth": "^1.11.0",
+    "mongoose": "^6.10.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.2",
+    "openai": "^3.2.1",
+    "pdf-parse": "^1.1.1",
+    "socket.io": "^4.6.1"
+  },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "jest": "^29.4.3",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3"
   }
 }
